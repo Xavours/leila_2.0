@@ -1,0 +1,112 @@
+article.life {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    
+    @media screen and (max-width: 679px) {
+    	padding: 20vh 0 12vh 0;
+    	height: auto;
+    }
+    
+    @media screen and (min-width: 1000px) {
+        flex-direction: row!important;
+    }
+    
+    .english {
+        font-style: italic;
+        margin-left: 5vw;
+        
+        @media screen and (max-width: 999px) {
+        	margin-left: 0!important;
+        	margin-top: 10vh;
+        }
+    }
+    
+    .french, .english {
+        width: 380px;
+        position: relative;
+        
+        @media screen and (max-width: 679px) {
+        	width: 320px!important;
+        }
+        
+        &:hover > h3::after {
+            width: 50px;
+        }
+        
+        h3 {
+            @media screen and (max-width: 999px) {
+                margin-bottom: 20px;
+            	font-size: 1.4rem;
+                line-height: 2.4rem;
+            }
+            
+            @media screen and (min-width: 1000px) and (max-width: 1599px) {
+                margin-bottom: 50px;
+            	font-size: 1.8rem;
+                line-height: 2.8rem;
+            }
+            
+            @media screen and (min-width: 1600px) {
+                margin-bottom: 50px;
+            	font-size: 2rem;
+                line-height: 3rem;
+            }
+            
+            &::after {
+                position: absolute;
+                width: 0px;
+                height: 3px;
+                left: 0;
+                top: 60px;
+                background: #000;
+                content: '';
+                transition: all cubic-bezier(.19, 1, .22, 1) 0.3s;
+            }
+        }
+        
+        p {
+            
+            font-size: 1.2rem;
+            line-height: 2rem;
+            
+            a {
+                
+                position: relative;
+                color: blue;
+                transition: all 0.3s ease-out;
+                
+                &::before {
+                
+                    @media screen and (max-width: 1599px) {
+                    	height: 2px;
+                    }
+            
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+                    margin-bottom: -3px;
+                    background-color: blue;
+                    visibility: hidden;
+                    transform: scaleX(0);
+                    transform-origin: 0 0;
+                    transition: cubic-bezier(.19, 1, .22, 1) 0.4s;
+                }
+            
+                &:hover {
+                    
+                    &::before {
+                        visibility: visible;
+                        transform: scaleX(1);
+                    }
+                }
+            }
+            
+        }
+    }
+}

@@ -1,0 +1,137 @@
+@media screen and (min-width: 680px) {
+    footer {
+        font-size: 1rem;
+        line-height: 1.4rem;
+        
+        .nav-social, .nav-contact {
+            position: fixed;
+            top: 0;
+            width: 40px;
+            height: 100%;
+            margin-top: 0;
+            text-align: left;
+        }
+    
+        .nav-contact {
+            left: 0;
+        
+        	.nav-items-contact {
+                left: 60px;
+            }
+        }
+        
+        .nav-social {
+            right: 0;
+            
+            .nav-items-social {
+                left: 0;
+            }
+        }
+    }
+    
+    .nav-items-social, .nav-items-contact {
+        position: absolute;
+        bottom: 40px;
+        padding-right: 20px;
+        white-space: nowrap;
+        transform-origin: left bottom;
+        transform: rotate(-90deg);
+        transition: all 0.3s ease-out;
+        
+        a {
+            margin-right: 2vh;
+            transition: all 0.3s ease-out;
+                
+            &:not(.no-link) {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            
+            &:last-child {
+                margin-right: 4vh!important;
+            }
+        }
+    
+        &::after {
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            right: 0;
+            top: 10px;
+            background: #000;
+            content: '';
+            transition: all 0.3s ease-out;
+        }
+    
+        &:hover {
+            padding-right: 40px;
+            
+            &::after {
+                width: 50px;
+            }
+        }
+    }	
+}
+
+@media screen and (max-width: 679px) {
+    footer {
+        font-size: 1rem;
+        text-align: center;
+        padding: 0 5vw 5vh 5vw;
+        
+        .nav-social, .nav-contact {
+        }
+    
+        .nav-contact {
+            margin-bottom: 1.5vh;
+            
+        	.nav-items-contact {	    
+                
+                &::before, &::after {
+                    position: absolute;
+                    width: 30px;
+                    height: 2px;
+                    margin-top: 11px;
+                    background: #000;
+                    content: '';
+                }
+                
+                &::before {
+                    margin-left: -50px;
+                }
+                
+                &::after {
+                    margin-left: 20px;
+                }
+            }
+        }
+        
+        .nav-social {
+            
+            .nav-items-social {
+            }
+        }
+    }
+    
+    .nav-items-social, .nav-items-contact {
+        white-space: nowrap;
+        
+        a {
+            margin-right: 2vh;
+            transition: all 0.3s ease-out;
+                
+            &:not(.no-link) {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            
+            &:last-child {
+                margin-right: 0!important;
+            }
+        }
+    }	
+}
+
+
