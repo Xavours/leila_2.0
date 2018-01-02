@@ -78,8 +78,8 @@ module.exports = function(grunt) {
 					authKey: 'key1'
 				},
 				cache: 'sftpCache.json',
-				src: 'min/',
-				dest: 'clickandbuilds/XavierOrssaud/wp-content/themes/leila_2.0/min/',
+				src: ['min/','css/'],
+				dest: ['clickandbuilds/XavierOrssaud/wp-content/themes/leila_2.0/min/','clickandbuilds/XavierOrssaud/wp-content/themes/leila_2.0/css/'],
 				exclusions: ['min/**/.DS_Store', 'min/**/Thumbs.db', 'dist/tmp'],
 				serverSep: '/',
 				concurrency: 4,

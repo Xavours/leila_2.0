@@ -68,7 +68,7 @@ Functions
         if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
     
             wp_enqueue_script('my-custom-script', get_template_directory_uri() .'/js/jquery.visible.min.js', array('jquery'), null, false);
-            wp_enqueue_script('my-custom-script-2', get_template_directory_uri() .'/js/scripts.js', array('jquery'), null, false);
+            wp_enqueue_script('my-custom-script-2', get_template_directory_uri() .'/min/app.min.js', array('jquery'), null, false);
         }
     }
     add_action( 'wp_enqueue_scripts', 'leila_header_scripts' );
