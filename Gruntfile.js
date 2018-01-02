@@ -70,18 +70,22 @@ module.exports = function(grunt) {
 		},
 
 		//  Upload files
-		ftp_upload: {
+		'sftp-deploy': {
 			build: {
 				auth: {
 					host: 'home430615955.1and1-data.host',
 					port: 22,
 					authKey: 'key1'
 				},
-				src: '/min',
-				dest: '/min',
-				exclusions: ['path/to/source/folder/**/.DS_Store', 'path/to/source/folder/**/Thumbs.db', 'dist/tmp']
+				cache: 'sftpCache.json',
+				src: 'min/',
+				dest: 'clickandbuilds/XavierOrssaud/wp-content/themes/leila_2.0/min/',
+				exclusions: ['min/**/.DS_Store', 'min/**/Thumbs.db', 'dist/tmp'],
+				serverSep: '/',
+				concurrency: 4,
+				progress: true
 			}
-		}
+		},
 
 		//  Clean .css and .css.map from sass files
 		clean: ["css/*.css.map"],
@@ -106,8 +110,8 @@ module.exports = function(grunt) {
 	// Default task(s)
 	grunt.registerTask('default', ['work', 'watch']);
 
-	grunt.registerTask('build', ['work', 'ftp_upload', 'imagemin']);
-	grunt.registerTask('work', ['styles', 'uglify']);
+	grunt.registerTask('build', ['work', 'imagemin']);
+	grunt.registerTask('work', ['styles', 'uglify', 'sftp-deploy']);
 	grunt.registerTask('styles', ['sass', 'cssmin', 'autoprefixer:styles', 'clean']);
 
 };
