@@ -1,145 +1,93 @@
 header {
-  -webkit-transition: all 0.3s ease-out;
-          transition: all 0.3s ease-out;
-}
-@media screen and (max-width: 679px) {
-  header {
-    font-size: 1rem;
-    line-height: 1.6rem;
-  }
-}
-@media screen and (min-width: 680px) {
-  header {
-    font-size: 1rem;
-    line-height: 1.9rem;
-  }
-}
-header.project-menu {
-  -webkit-transform: translateY(-100%);
-      -ms-transform: translateY(-100%);
-          transform: translateY(-100%);
-  opacity: 0;
-}
-header.shown {
-  -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-          transform: translateY(0);
-  opacity: 1;
-}
-header.header {
-  position: fixed;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  height: 100px;
-  padding: 0 4vw;
-  background: transparent;
-  z-index: 99;
-}
-header.header .nav li.menu-item {
-  display: inline;
-  margin-left: 1vw;
-  padding: 3px 7px;
-  border: solid 3px transparent;
-  -webkit-transition: all 0.3s ease-out;
-          transition: all 0.3s ease-out;
-}
-header.header .nav li.menu-item:hover, header.header .nav li.menu-item.current-menu-item {
-  border: solid 3px #000;
-}
-header.header .nav .menu, header.header .nav .langs-wrapper {
-  display: inline-block;
-}
-header.header .nav .langs-wrapper {
-  display: block;
-  float: right;
-  margin-left: 1.5vw;
-  margin-right: -1vw;
-  width: 55px;
-  height: 20px;
-  overflow: hidden;
-}
-header.header .nav .langs-wrapper:hover {
-  overflow: visible;
-}
-header.header .nav .langs-wrapper span {
-  margin-left: 0.25vw;
-  margin-top: 4px;
-  display: block;
-  -webkit-transform-origin: center center;
-      -ms-transform-origin: center center;
-          transform-origin: center center;
-}
-header.header .nav .langs-wrapper span.arrow {
-  -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-header.header .nav .langs-wrapper ul {
-  margin-top: -1.5vh;
-}
-header.header .nav span.italic {
-  font-style: italic;
-}
+  transition: all 0.3s ease-out; }
+  @media screen and (max-width: 679px) {
+    header {
+      font-size: 1rem;
+      line-height: 1.6rem; } }
+  @media screen and (min-width: 680px) {
+    header {
+      font-size: 1rem;
+      line-height: 1.9rem; } }
+  header.project-menu {
+    transform: translateY(-100%);
+    opacity: 0; }
+  header.shown {
+    transform: translateY(0);
+    opacity: 1; }
+  header.header {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    padding: 0 4vw;
+    background: transparent;
+    z-index: 99; }
+    header.header .nav li.menu-item {
+      display: inline;
+      margin-left: 1vw;
+      padding: 3px 7px;
+      border: solid 3px transparent;
+      transition: all 0.3s ease-out; }
+      header.header .nav li.menu-item:hover, header.header .nav li.menu-item.current-menu-item {
+        border: solid 3px #000; }
+    header.header .nav .menu, header.header .nav .langs-wrapper {
+      display: inline-block; }
+    header.header .nav .langs-wrapper {
+      display: block;
+      float: right;
+      margin-left: 1.5vw;
+      margin-right: -1vw;
+      width: 55px;
+      height: 20px;
+      overflow: hidden; }
+      header.header .nav .langs-wrapper:hover {
+        overflow: visible; }
+      header.header .nav .langs-wrapper span {
+        margin-left: 0.25vw;
+        margin-top: 4px;
+        display: block;
+        transform-origin: center center; }
+        header.header .nav .langs-wrapper span.arrow {
+          transform: rotate(90deg); }
+      header.header .nav .langs-wrapper ul {
+        margin-top: -1.5vh; }
+    header.header .nav span.italic {
+      font-style: italic; }
 
 a.name, .nav, .nav-project {
-  height: 20px;
-}
+  height: 20px; }
 
 .icon-wrap {
   position: absolute;
   bottom: -4px;
-  -webkit-transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
-          transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
-}
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s; }
 
 .project-button-back {
   position: relative;
   display: inline-block;
   height: 16px;
-  -webkit-transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
-          transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
-}
-.project-button-back::after {
-  position: absolute;
-  width: 20px;
-  height: 2px;
-  top: 10px;
-  left: 0;
-  background: #000;
-  content: '';
-  -webkit-transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
-          transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
-}
-.project-button-back:hover::after {
-  width: 40px;
-}
-.project-button-back:hover .button-name {
-  margin-left: 45px;
-}
-.project-button-back .icon-wrap {
-  margin-right: 25px;
-}
-.project-button-back .button-name {
-  margin-left: 25px;
-  -webkit-transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
-          transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
-}
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s; }
+  .project-button-back::after {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    top: 10px;
+    left: 0;
+    background: #000;
+    content: '';
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s; }
+  .project-button-back:hover::after {
+    width: 40px; }
+  .project-button-back:hover .button-name {
+    margin-left: 45px; }
+  .project-button-back .icon-wrap {
+    margin-right: 25px; }
+  .project-button-back .button-name {
+    margin-left: 25px;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s; }
 
 .project-button-previous {
   position: absolute;
@@ -149,29 +97,22 @@ a.name, .nav, .nav-project {
   height: 16px;
   cursor: pointer;
   cursor: hand;
-  -webkit-transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
-          transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
-}
-.project-button-previous::after {
-  position: absolute;
-  width: 20px;
-  height: 2px;
-  top: 10px;
-  right: 0;
-  background: #000;
-  content: '';
-  -webkit-transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
-          transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
-}
-.project-button-previous:hover {
-  width: 42px;
-}
-.project-button-previous:hover::after {
-  width: 40px;
-}
-.project-button-previous .icon-wrap {
-  left: 0;
-}
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s; }
+  .project-button-previous::after {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    top: 10px;
+    right: 0;
+    background: #000;
+    content: '';
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s; }
+  .project-button-previous:hover {
+    width: 42px; }
+    .project-button-previous:hover::after {
+      width: 40px; }
+  .project-button-previous .icon-wrap {
+    left: 0; }
 
 .project-button-next {
   position: absolute;
@@ -181,27 +122,22 @@ a.name, .nav, .nav-project {
   height: 16px;
   cursor: pointer;
   cursor: hand;
-  -webkit-transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
-          transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
-}
-.project-button-next::after {
-  position: absolute;
-  width: 20px;
-  height: 2px;
-  top: 10px;
-  left: 0;
-  background: #000;
-  content: '';
-  -webkit-transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
-          transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
-}
-.project-button-next:hover {
-  width: 42px;
-  right: 20px;
-}
-.project-button-next:hover::after {
-  width: 40px;
-}
-.project-button-next .icon-wrap {
-  right: 0;
-}
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s; }
+  .project-button-next::after {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    top: 10px;
+    left: 0;
+    background: #000;
+    content: '';
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s; }
+  .project-button-next:hover {
+    width: 42px;
+    right: 20px; }
+    .project-button-next:hover::after {
+      width: 40px; }
+  .project-button-next .icon-wrap {
+    right: 0; }
+
+/*# sourceMappingURL=header.css.map */

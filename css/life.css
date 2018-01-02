@@ -1,1 +1,80 @@
-article.life{display:flex;flex-direction:column;justify-content:center;align-items:center;flex-wrap:wrap;height:100vh;}@media screen and (max-width:679px){article.life{padding:20vh 0 12vh 0;height:auto;}}@media screen and (min-width:1000px){article.life{flex-direction:row !important;}}article.life .english{font-style:italic;margin-left:5vw;}@media screen and (max-width:999px){article.life .english{margin-left:0 !important;margin-top:10vh;}}article.life .french,article.life .english{width:380px;position:relative;}@media screen and (max-width:679px){article.life .french,article.life .english{width:320px !important;}}article.life .french:hover > h3::after,article.life .english:hover > h3::after{width:50px;}@media screen and (max-width:999px){article.life .french h3,article.life .english h3{margin-bottom:20px;font-size:1.4rem;line-height:2.4rem;}}@media screen and (min-width:1000px) and (max-width:1599px){article.life .french h3,article.life .english h3{margin-bottom:50px;font-size:1.8rem;line-height:2.8rem;}}@media screen and (min-width:1600px){article.life .french h3,article.life .english h3{margin-bottom:50px;font-size:2rem;line-height:3rem;}}article.life .french h3::after,article.life .english h3::after{position:absolute;width:0px;height:3px;left:0;top:60px;background:#000;content:'';transition:all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;}article.life .french p,article.life .english p{font-size:1.2rem;line-height:2rem;}article.life .french p a,article.life .english p a{position:relative;color:blue;transition:all 0.3s ease-out;}article.life .french p a::before,article.life .english p a::before{content:"";position:absolute;width:100%;bottom:0;left:0;margin-bottom:-3px;background-color:blue;visibility:hidden;transform:scaleX(0);transform-origin:0 0;transition:cubic-bezier(0.19, 1, 0.22, 1) 0.4s;}@media screen and (max-width:1599px){article.life .french p a::before,article.life .english p a::before{height:2px;}}article.life .french p a:hover::before,article.life .english p a:hover::before{visibility:visible;transform:scaleX(1);}
+article.life {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh; }
+  @media screen and (max-width: 679px) {
+    article.life {
+      padding: 20vh 0 12vh 0;
+      height: auto; } }
+  @media screen and (min-width: 1000px) {
+    article.life {
+      flex-direction: row !important; } }
+  article.life .english {
+    font-style: italic;
+    margin-left: 5vw; }
+    @media screen and (max-width: 999px) {
+      article.life .english {
+        margin-left: 0 !important;
+        margin-top: 10vh; } }
+  article.life .french, article.life .english {
+    width: 380px;
+    position: relative; }
+    @media screen and (max-width: 679px) {
+      article.life .french, article.life .english {
+        width: 320px !important; } }
+    article.life .french:hover > h3::after, article.life .english:hover > h3::after {
+      width: 50px; }
+    @media screen and (max-width: 999px) {
+      article.life .french h3, article.life .english h3 {
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+        line-height: 2.4rem; } }
+    @media screen and (min-width: 1000px) and (max-width: 1599px) {
+      article.life .french h3, article.life .english h3 {
+        margin-bottom: 50px;
+        font-size: 1.8rem;
+        line-height: 2.8rem; } }
+    @media screen and (min-width: 1600px) {
+      article.life .french h3, article.life .english h3 {
+        margin-bottom: 50px;
+        font-size: 2rem;
+        line-height: 3rem; } }
+    article.life .french h3::after, article.life .english h3::after {
+      position: absolute;
+      width: 0px;
+      height: 3px;
+      left: 0;
+      top: 60px;
+      background: #000;
+      content: '';
+      transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s; }
+    article.life .french p, article.life .english p {
+      font-size: 1.2rem;
+      line-height: 2rem; }
+      article.life .french p a, article.life .english p a {
+        position: relative;
+        color: blue;
+        transition: all 0.3s ease-out; }
+        article.life .french p a::before, article.life .english p a::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          bottom: 0;
+          left: 0;
+          margin-bottom: -3px;
+          background-color: blue;
+          visibility: hidden;
+          transform: scaleX(0);
+          transform-origin: 0 0;
+          transition: cubic-bezier(0.19, 1, 0.22, 1) 0.4s; }
+          @media screen and (max-width: 1599px) {
+            article.life .french p a::before, article.life .english p a::before {
+              height: 2px; } }
+        article.life .french p a:hover::before, article.life .english p a:hover::before {
+          visibility: visible;
+          transform: scaleX(1); }
+
+/*# sourceMappingURL=life.css.map */

@@ -1,26 +1,16 @@
 .project {
   width: 80%;
-  display: block !important;
-}
-.project .leila-item-wrapper-link {
-  overflow: hidden;
-  display: inline-block;
-}
-.project .leila-item-wrapper-link img {
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-          transition: transform 0.3s ease-out;
-  display: inline-block;
-}
-.project:hover .leila-item-content {
-  -webkit-transform: translate3D(0, 0, 0);
-      -ms-transform: translate3D(0, 0, 0);
-          transform: translate3D(0, 0, 0);
-}
-.project:hover .leila-item-content .leila-item-meta-wrapper {
-  -webkit-transform: translate3D(0, 0, 0);
-      -ms-transform: translate3D(0, 0, 0);
-          transform: translate3D(0, 0, 0);
-}
+  display: block !important; }
+  .project .leila-item-wrapper-link {
+    overflow: hidden;
+    display: inline-block; }
+    .project .leila-item-wrapper-link img {
+      transition: transform 0.3s ease-out;
+      display: inline-block; }
+  .project:hover .leila-item-content {
+    transform: translate3D(0, 0, 0); }
+    .project:hover .leila-item-content .leila-item-meta-wrapper {
+      transform: translate3D(0, 0, 0); }
 
 .leila-item-content {
   width: 100%;
@@ -28,68 +18,36 @@
   padding-left: 1em;
   position: absolute;
   bottom: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
   background: white;
   overflow: hidden;
-  -webkit-transform: translate3D(0, 100%, 0);
-      -ms-transform: translate3D(0, 100%, 0);
-          transform: translate3D(0, 100%, 0);
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-          transition: transform 0.3s ease-out;
-}
-.leila-item-content .leila-item-meta-wrapper {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: left;
-  -webkit-align-items: left;
-      -ms-flex-align: left;
-          align-items: left;
-  overflow: hidden;
-  height: 80px;
-  -webkit-transform: translate3D(0, -100%, 0);
-      -ms-transform: translate3D(0, -100%, 0);
-          transform: translate3D(0, -100%, 0);
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-          transition: transform 0.3s ease-out;
-}
-.leila-item-content .leila-item-meta-wrapper .leila-item-title {
-  color: #323232;
-  font-size: 1.3em;
-  font-weight: normal;
-  line-height: 1.5em;
-  margin: 0;
-}
-.leila-item-content .leila-item-meta-wrapper .leila-item-meta .meta > * + *:before {
-  content: "-";
-  padding-right: .5em;
-  padding-left: .2em;
-}
-.leila-item-content .leila-item-meta-wrapper .leila-item-meta li {
-    color: #646464;
-  font-size: 0.7em;
-  text-transform: uppercase;
-  display: inline-block;
-}
+  transform: translate3D(0, 100%, 0);
+  transition: transform 0.3s ease-out; }
+  .leila-item-content .leila-item-meta-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    overflow: hidden;
+    height: 80px;
+    transform: translate3D(0, -100%, 0);
+    transition: transform 0.3s ease-out; }
+    .leila-item-content .leila-item-meta-wrapper .leila-item-title {
+      color: #323232;
+      font-size: 1em;
+      font-weight: normal;
+      line-height: 1.5em;
+      margin: 0; }
+    .leila-item-content .leila-item-meta-wrapper .leila-item-meta .meta > * + *:before {
+      content: "-";
+      padding-right: .5em;
+      padding-left: .2em; }
+    .leila-item-content .leila-item-meta-wrapper .leila-item-meta li {
+      color: #646464;
+      font-size: 0.7em;
+      text-transform: uppercase;
+      display: inline-block; }
+
+/*# sourceMappingURL=showcase-portfolio.css.map */

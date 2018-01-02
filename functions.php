@@ -95,14 +95,15 @@ add_action( 'wp_enqueue_scripts', 'enqueue_scripts_in_footer' );*/
 
 // Load styles
 function add_theme_scripts() {
-    wp_enqueue_style( 'reset', get_template_directory_uri() . '/css/reset.css', array(), '1.1', 'all');
-    wp_enqueue_style( 'footer', get_template_directory_uri() . '/css/footer.css', array(), '1.1', 'all');
-    wp_enqueue_style( 'header', get_template_directory_uri() . '/css/header.css', array(), '1.1', 'all');
-    wp_enqueue_style( 'life', get_template_directory_uri() . '/css/life.css', array(), '1.1', 'all');
-    wp_enqueue_style( 'page', get_template_directory_uri() . '/css/homepage.css', array(), '1.1', 'all');
-    wp_enqueue_style( 'single', get_template_directory_uri() . '/css/single.css', array(), '1.1', 'all');
-    wp_enqueue_style( 'styles', get_template_directory_uri() . '/css/styles.css', array(), '1.1', 'all');
-    wp_enqueue_style( 'showcase-portfolio', get_template_directory_uri() . '/css/showcase-portfolio.css', array(), '1.1', 'all');
+        wp_enqueue_style( 'reset', get_template_directory_uri() . '/min/app.min.css', array(), '1.1', 'all');
+    // wp_enqueue_style( 'reset', get_template_directory_uri() . '/css/reset.css', array(), '1.1', 'all');
+    // wp_enqueue_style( 'footer', get_template_directory_uri() . '/css/footer.css', array(), '1.1', 'all');
+    // wp_enqueue_style( 'header', get_template_directory_uri() . '/css/header.css', array(), '1.1', 'all');
+    // wp_enqueue_style( 'life', get_template_directory_uri() . '/css/life.css', array(), '1.1', 'all');
+    // wp_enqueue_style( 'page', get_template_directory_uri() . '/css/homepage.css', array(), '1.1', 'all');
+    // wp_enqueue_style( 'single', get_template_directory_uri() . '/css/single.css', array(), '1.1', 'all');
+    // wp_enqueue_style( 'styles', get_template_directory_uri() . '/css/styles.css', array(), '1.1', 'all');
+    // wp_enqueue_style( 'showcase-portfolio', get_template_directory_uri() . '/css/showcase-portfolio.css', array(), '1.1', 'all');
 
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
