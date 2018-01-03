@@ -1,18 +1,18 @@
-article .cover {
+.single article .cover {
   position: relative;
   height: 100vh;
   width: 100vw;
   overflow: hidden; }
   @media screen and (max-width: 499px) {
-    article .cover {
+    .single article .cover {
       height: 280px; } }
   @media screen and (min-width: 500px) and (max-width: 999px) {
-    article .cover {
+    .single article .cover {
       height: 550px; } }
   @media screen and (min-width: 1000px) {
-    article .cover {
+    .single article .cover {
       height: 100vh; } }
-  article .cover img {
+  .single article .cover img {
     display: block;
     position: absolute;
     top: 50%;
@@ -20,7 +20,7 @@ article .cover {
     transform: translate(-50%, -50%);
     width: 100%;
     height: auto; }
-  article .cover .scroll-down {
+  .single article .cover .scroll-down {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -31,20 +31,25 @@ article .cover {
     transform: translate(-50%, -50%);
     width: 100px;
     height: 100px; }
-    article .cover .scroll-down span {
+    .single article .cover .scroll-down span {
       display: block;
       transform-origin: center center; }
-      article .cover .scroll-down span.arrow {
+      .single article .cover .scroll-down span.arrow {
         transform: rotate(90deg); }
-      article .cover .scroll-down span.text {
+      .single article .cover .scroll-down span.text {
         margin-top: 40px;
         animation: scroll-down 1s ease-out infinite alternate; }
 
-article .project-infos {
+.single article .project-infos {
   font-family: 'F', Arial, sans-serif;
-  color: #323232;
-  padding: 15vh 15vw; }
-  article .project-infos .project-infos-title, article .project-infos .project-infos-date {
+  color: #323232; }
+  @media screen and (max-width: 999px) {
+    .single article .project-infos {
+      padding: 15vw 15vw; } }
+  @media screen and (min-width: 1000px) {
+    .single article .project-infos {
+      padding: 11vw 15vw; } }
+  .single article .project-infos .project-infos-title, .single article .project-infos .project-infos-date {
     font-family: 'S', Georgia, serif;
     font-size: 1.25em;
     line-height: 1em;
@@ -54,52 +59,59 @@ article .project-infos {
     margin: 0;
     display: inline-block;
     height: 30px; }
-  article .project-infos .project-infos-title {
+  .single article .project-infos .project-infos-title {
     float: left; }
-  article .project-infos .project-infos-date {
+  .single article .project-infos .project-infos-date {
     float: right; }
-  article .project-infos .project-infos-description p {
-    font-size: 2em;
-    line-height: 1.5em;
-    margin-top: 150px; }
-    article .project-infos .project-infos-description p .underlined {
+  .single article .project-infos .project-infos-description p {
+    margin-top: 100px; }
+    @media screen and (max-width: 999px) {
+      .single article .project-infos .project-infos-description p {
+        font-size: 1.15em;
+        line-height: 1.6em; } }
+    @media screen and (min-width: 1000px) {
+      .single article .project-infos .project-infos-description p {
+        font-size: 2em;
+        line-height: 1.5em;
+        margin-top: 150px !important; } }
+    .single article .project-infos .project-infos-description p .underlined {
       text-decoration: underlined;
       text-underline-position: under; }
 
-article .content {
+.single article .content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; }
-  article .content .wrapper {
+  .single article .content .wrapper {
     background-repeat: no-repeat; }
-  article .content img {
+  .single article .content img {
     display: block;
     width: 100%;
     height: auto; }
-  article .content .marged {
+  .single article .content .marged {
     width: 80%; }
-  article .content .full {
+  .single article .content .full {
     width: 100%;
     max-width: 1600px; }
 
-article .project-meta {
+.single article .project-meta {
   margin-top: 5vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   justify-content: space-around; }
   @media screen and (min-width: 1000px) {
-    article .project-meta {
+    .single article .project-meta {
       padding: 15vh 15vw; } }
-  article .project-meta li.label {
+  .single article .project-meta li.label {
     font-size: 0.8rem;
     margin-bottom: 1vh; }
-    article .project-meta li.label:not(:first-child) {
+    .single article .project-meta li.label:not(:first-child) {
       margin-top: 3vh; }
-  article .project-meta li.value {
+  .single article .project-meta li.value {
     font-size: 1.1rem; }
-    article .project-meta li.value ul li:not(:first-child) {
+    .single article .project-meta li.value ul li:not(:first-child) {
       margin-top: 0.5vh; }
 
 @keyframes scroll-down {

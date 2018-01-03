@@ -23,57 +23,57 @@
         animation: scroll-down 1s ease-out infinite alternate; }
 
 @media screen and (max-width: 919px) {
-  .content {
+  .home .content {
     padding: 10vh 0; } }
 
-.content .left, .content .right {
+.home .content .left, .home .content .right {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center; }
   @media screen and (min-width: 920px) {
-    .content .left, .content .right {
+    .home .content .left, .home .content .right {
       width: 50%;
       height: 200vh; } }
   @media screen and (max-width: 919px) {
-    .content .left, .content .right {
+    .home .content .left, .home .content .right {
       padding: 0 8vw; } }
 
 @media screen and (min-width: 1400px) {
-  .content .left {
+  .home .content .left {
     padding-left: 10vw !important; } }
 
 @media screen and (min-width: 920px) {
-  .content .left {
+  .home .content .left {
     position: absolute;
     left: 0;
     padding-left: 5vw; } }
 
 @media screen and (min-width: 920px) {
-  .content .left .pop-up {
+  .home .content .left .pop-up {
     right: 0;
     transform: translateX(100%); } }
 
 @media screen and (max-width: 919px) {
-  .content .left .pop-up {
+  .home .content .left .pop-up {
     left: 0; } }
 
 @media screen and (min-width: 1400px) {
-  .content .right {
+  .home .content .right {
     padding-right: 10vw !important; } }
 
 @media screen and (min-width: 920px) {
-  .content .right {
+  .home .content .right {
     position: fixed;
     bottom: 0;
     right: 0;
     padding-right: 5vw; } }
 
 @media screen and (min-width: 920px) {
-  .content .right .pop-up {
+  .home .content .right .pop-up {
     transform: translateX(-100%); } }
 
-.content .project {
+.home .content .project {
   position: relative;
   width: 80%;
   display: flex;
@@ -83,12 +83,12 @@
   transition: -webkit-filter 0.6s;
   overflow: hidden; }
   @media screen and (max-width: 919px) {
-    .content .project {
+    .home .content .project {
       margin-top: 10vh; } }
-  .content .project img {
+  .home .content .project img {
     max-width: 100%;
     height: auto; }
-  .content .project .pop-up {
+  .home .content .project .pop-up {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -99,27 +99,27 @@
     box-sizing: initial;
     transition: transform cubic-bezier(0.19, 1, 0.22, 1) 0.4s; }
     @media screen and (max-width: 919px) {
-      .content .project .pop-up {
+      .home .content .project .pop-up {
         min-width: 250px;
         top: 50%;
         left: 50%;
         transform: translate(100%, -50%); } }
     @media screen and (max-width: 919px) {
-      .content .project .pop-up.open {
+      .home .content .project .pop-up.open {
         transform: translate(-50%, -50%); } }
     @media screen and (min-width: 920px) {
-      .content .project .pop-up.open {
+      .home .content .project .pop-up.open {
         transform: translate(0, 0); } }
-    .content .project .pop-up .infos {
+    .home .content .project .pop-up .infos {
       opacity: 0;
       font-size: 1.2rem;
       line-height: 1.9rem; }
-      .content .project .pop-up .infos:hover .title::after {
+      .home .content .project .pop-up .infos:hover .title::after {
         width: 50px; }
-      .content .project .pop-up .infos .title {
+      .home .content .project .pop-up .infos .title {
         position: relative;
         padding-bottom: 3vh; }
-        .content .project .pop-up .infos .title::after {
+        .home .content .project .pop-up .infos .title::after {
           position: absolute;
           width: 20px;
           height: 2px;
@@ -128,7 +128,7 @@
           background: #000;
           content: '';
           transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s; }
-      .content .project .pop-up .infos .categories {
+      .home .content .project .pop-up .infos .categories {
         margin-top: 3vh; }
 
 .button-next {
