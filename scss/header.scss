@@ -42,6 +42,91 @@ header {
 			padding: 0 4vw;
 		}
 
+		.project-menu-wrapper {
+			position: relative;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+
+			width: 100%;
+
+			.back {
+				position: absolute;
+				left: 0;
+
+				.icon-wrap {
+					margin-right: 25px;
+				}
+
+				.button-name {
+					margin-left: 25px;
+					transition: all cubic-bezier(.19, 1, .22, 1) 0.4s;
+				}
+
+				&:hover {
+					.icon-back::before {
+						transform:rotate(30deg);
+					}
+					.icon-back::after {
+						transform:rotate(-30deg);
+					}
+				}
+
+				.icon-back{
+					position: absolute;
+					display: inline-block;
+					width: 50px;
+					height: 50px;
+					left: -1.5vw;
+					top: -15px;
+					overflow: hidden;
+
+					&::before, &::after {
+						content: '';
+						position: absolute;
+						height: 2px;
+						width: 60%;
+						top: 50%;
+						left: 0;
+						margin-top: -1px;
+						background: black;
+						transition: all 0.2s ease-out;
+					}
+
+					&::before {
+						transform:rotate(45deg);
+					}
+
+					&::after {
+						transform:rotate(-45deg);
+						margin-top: -1px;
+					}
+				}
+			}
+
+			.project-menu-wrapper-nav {
+				display: flex;
+
+				.project-menu-wrapper-nav-link {
+					position: relative;
+				}
+
+				.project-menu-wrapper-infos {
+					.title, .date {
+						font-family: 'S', Georgia, serif;
+						font-size: 1.25em;
+						line-height: 1em;
+						letter-spacing: 0.5px;
+						text-transform: lowercase;
+						font-weight: normal;
+						margin: 0;
+						display: inline-block;
+					}
+				}
+			}
+		}
+
 		.nav {
 
 			li.menu-item {
@@ -100,7 +185,7 @@ header {
 	}
 }
 
-a.name, .nav, .nav-project {
+a.name, .nav, project-menu-wrapper-nav {
 	height: 20px;
 }
 
@@ -110,51 +195,9 @@ a.name, .nav, .nav-project {
 	transition: all cubic-bezier(.19, 1, .22, 1) 0.4s;
 }
 
-.project-button-back {
-	position: relative;
-	display: inline-block;
-	height: 16px;
-	transition: all cubic-bezier(.19, 1, .22, 1) 0.4s;
-
-	&::after {
-		position: absolute;
-		width: 20px;
-		height: 2px;
-		top: 10px;
-		left:0;
-		background: #000;
-		content: '';
-		transition: all cubic-bezier(.19, 1, .22, 1) 0.4s;
-	}
-
-	&:hover {
-
-		&::after {
-			width: 40px;
-		}
-
-		.button-name {
-			margin-left: 45px;
-
-
-		}
-	}
-
-	.icon-wrap {
-		margin-right: 25px;
-	}
-
-	.button-name {
-		margin-left: 25px;
-		transition: all cubic-bezier(.19, 1, .22, 1) 0.4s;
-
-
-	}
-}
-
 .project-button-previous {
 	position: absolute;
-	right: 80px;
+	right: 20px;
 	width: 22px;
 	display: inline-block;
 	height: 16px;
@@ -188,7 +231,7 @@ a.name, .nav, .nav-project {
 
 .project-button-next {
 	position: absolute;
-	right: 40px;
+	left: 20px;
 	width: 22px;
 	display: inline-block;
 	height: 16px;
