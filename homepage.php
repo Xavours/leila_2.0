@@ -25,35 +25,50 @@ x="0px" y="0px" width="8.6px" height="10px" viewBox="0 0 4.3 5" xml:space="prese
 	<main class="content">
 	
 	<!-- Query the post -->
-<?php $args = array( 'post_type' => 'portfolio', 'posts_per_page' => -1 );
-    $query = new WP_Query( $args ); ?>
+    <?php $args = array( 'post_type' => 'portfolio', 'posts_per_page' => -1 );
+        $query = new WP_Query( $args ); ?>
 
-<!--even-->
-<section class="left">
-    <?php while ( $query->have_posts() ) : $query->the_post();
-	
-    	global $post;	
-        if ($query->current_post % 2 == 0):
+    <!-- mobile -->
+    <section class="mobile-only">
+        <?php while ( $query->have_posts() ) : $query->the_post();
+        
+            global $post;   
             get_template_part( 'template-parts/showcase-portfolio' );
-        endif;
-    
-    endwhile ?>
-</section>
+        
+        endwhile ?>
+    </section>
+    <!-- /mobile -->
 
-<!--odd-->
-<section class="right">
-    <?php while ( $query->have_posts() ) : $query->the_post();
-	
-    	global $post;	
-        if ($query->current_post % 2 == 1):
-            get_template_part( 'template-parts/showcase-portfolio' );
-        endif;
-    
-    endwhile ?>
-</section>
-	    
+    <!-- desktop -->
+    <section class="desktop-only">
+        <!-- even -->
+        <section class="left">
+            <?php while ( $query->have_posts() ) : $query->the_post();
+        	
+            	global $post;	
+                if ($query->current_post % 2 == 0):
+                    get_template_part( 'template-parts/showcase-portfolio' );
+                endif;
+            
+            endwhile ?>
+        </section>
 
-	</main>
-	<!-- /main content -->
+        <!-- odd -->
+        <section class="right">
+            <?php while ( $query->have_posts() ) : $query->the_post();
+        	
+            	global $post;	
+                if ($query->current_post % 2 == 1):
+                    get_template_part( 'template-parts/showcase-portfolio' );
+                endif;
+            
+            endwhile ?>
+        </section>
+    </section>
+    <!-- /desktop -->
+    	    
+
+    </main>
+    <!-- /main content -->
 
 <?php get_footer(); ?>
