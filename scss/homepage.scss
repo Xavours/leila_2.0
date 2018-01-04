@@ -33,13 +33,13 @@
 
 .mobile-only {
     @media screen and (min-width: 920px) {
-        display: none;
+        display: none!important;
     }
 }
 
 .desktop-only {
     @media screen and (max-width: 919px) {
-        display: none;
+        display: none!important;
     }
 }
 

@@ -24,11 +24,11 @@
 
 @media screen and (min-width: 920px) {
   .mobile-only {
-    display: none; } }
+    display: none !important; } }
 
 @media screen and (max-width: 919px) {
   .desktop-only {
-    display: none; } }
+    display: none !important; } }
 
 @media screen and (max-width: 919px) {
   .home .content {
