@@ -70,6 +70,6 @@ Thumbs.db
 
 #  #
 ######################
-.ftppass
+*.ftppass
 sftpCache.json
 /css/*
