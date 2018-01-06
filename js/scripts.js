@@ -31,19 +31,6 @@ var currentProjectIndex;
 					scrolledin($(this));
 				});
 			});
-				
-			// Trigger Dynamic Menu
-			var dynamicHeight;
-			if ( document.querySelector('.project-menu') !== null){
-			    console.log('yes');
-        		if ( document.querySelector('.cover') !== null ){
-        		    dynamicHeight = window.innerHeight + 200;
-                    dynamicHeader(dynamicHeight)
-                } else {
-                    dynamicHeight = 200;
-                    dynamicHeader(dynamicHeight)
-                }
-			}
 
 			$(window).on('resize',function(){
 				if($(window).width() > 769){
@@ -53,6 +40,21 @@ var currentProjectIndex;
 					})
 				}
 			});
+				
+			// Trigger Dynamic Header
+			// Apply only if it's a project page
+			$('.cover') !== null ? navbarOffset = 200 : navbarOffset = window.innerHeight + 200;
+
+			$(window).scroll(function(event){
+			    didScroll = true;
+			});
+
+			setInterval(function() {
+			    if (didScroll) {
+			        hasScrolled();
+			        didScroll = false;
+			    }
+			}, 250);
     		
     		//  Preload image on project page
     		$(".content").find('div').each(function(){
@@ -89,7 +91,7 @@ var currentProjectIndex;
 	
 })(jQuery, this);
 
-// Closure
+// Various Closure
 function scrolledin(element){
 	if(!element.hasClass('loaded')) return;
 	
@@ -115,14 +117,31 @@ function preloader(element){
 	});
 }
 
-function dynamicHeader(height) {
-    $(window).scroll(function(e) {
-        console.log( $(this).scrollTop() + ' / ' + height);
-        if( $(this).scrollTop() > height ){
-            $('header').addClass('shown');
+// Hide Header on scroll down but show it on scroll up
+// Based on the code from: https://medium.com/@mariusc23/hide-header-on-scroll-down-show-on-scroll-up-67bbaae9a78c
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarOffset = 200;
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if ( (st > lastScrollTop && st > navbarOffset) || (st <= navbarOffset) ){
+        // Scroll Down
+        $('header.dynamic').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height() && st > navbarOffset) {
+            $('header.dynamic').removeClass('nav-up').addClass('nav-down');
         }
-        else{
-            $('header').removeClass('shown');
-        }
-    });
+    }
+    
+    lastScrollTop = st;
 }

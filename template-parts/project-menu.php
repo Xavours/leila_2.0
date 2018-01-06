@@ -37,7 +37,7 @@ if( $nextPostLink === get_permalink() ) {
 ?>
 
 <!-- header -->
-<header class="header project-menu clear" role="banner">
+<header class="header project-menu dynamic nav-up clear" role="banner">
 
 	<div class="project-menu-wrapper">
         <a class="back" href="<?php echo get_site_url(); ?>">

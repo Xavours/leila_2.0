@@ -12,14 +12,19 @@ header {
 		line-height: 1.9rem;
 	}
     
-    &.project-menu {
+    &.nav-up {
         transform: translateY(-100%);
         opacity: 0;
     }
-    
-    &.shown {
+
+    &.nav-down {
         transform: translateY(0);
         opacity: 1;
+    }
+
+    &.dynamic {
+    	height: 50px!important;
+    	background: white!important;
     }
 
 	&.header {
