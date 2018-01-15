@@ -1,6 +1,10 @@
 .single {
 
 	article {
+		background-color: #ffffff;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 
 		.cover {
 			position: relative;
@@ -117,6 +121,10 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
+
+			@media screen and (max-width: 1440px) {
+				max-width: 1100px;
+			}
 			
 			.wrapper {
 				background-repeat: no-repeat;
@@ -139,17 +147,18 @@
 		}
 		
 		.project-meta {
-			margin-top: 5vh;
 			display: flex;
-			flex-direction: row;
+			flex-direction: column;
 			justify-content: center;
-			justify-content: space-around;
+			align-items: flex-start;
+			align-self: flex-start;
 			
 			@media screen and (min-width: 1000px) {
-				padding: 15vh 15vw;
+				padding: 15vh 0;
 			}
 			
 			ul.block {
+				margin-bottom: 20px;
 			}
 			
 			li {

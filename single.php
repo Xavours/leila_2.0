@@ -51,46 +51,46 @@ global $post; ?>
                 $display = get_sub_field('display');
 
                 if ( $display == 'marged' ) {
-                    echo '<div class="' . $display . ' wrapper" data-url="' . $image['url'] . '" style="max-width:' . get_field('max-width') . 'px"><img></div>';
+                    echo '<div class="' . $display . ' wrapper" data-url="' . $image['url'] . '" style="max-width:' . get_field('max-width') . 'px; ' . get_sub_field('style') . '"><img></div>';
                 } else {
-                    echo '<div class="' . $display . ' wrapper" data-url="' . $image['url'] . '"><img></div>';
+                    echo '<div class="' . $display . ' wrapper" data-url="' . $image['url'] . '" style="; ' . get_sub_field('style') . '"><img></div>';
                 }
             }
         } ?>
+
+            <!-- post meta -->
+            <div class="project-meta" style="color:<?php the_field('text_color') ?>">
+
+                <?php if( get_field('role') !== ""):
+                $role = get_field('role'); ?>
+                    <ul class="block">
+                        <li class="label"><?php pll_e('Role'); ?></li>
+                        <li class="value">
+                            <ul>
+                                <?php foreach ( $role as $value): ?>
+                                    <li><?php echo $value; ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </li>
+                    </ul>
+                <?php endif; ?>
+                <?php if( get_field('agence') !== ""): ?>
+                    <ul class="block">
+                        <li class="label"><?php pll_e('Agency'); ?></li>
+                        <li class="value"><?php the_field('agence') ?></li>
+                    </ul>
+                <?php endif; ?>
+                <?php if( get_field('client') !== ""): ?>
+                    <ul class="block">
+                        <li class="label"><?php pll_e('Client'); ?></li>
+                        <li class="value"><?php the_field('client') ?></li>
+                    </ul>
+                <?php endif; ?>
+
+            </div>
+            <!-- /post meta -->
         </div>
         <!-- /post content -->
-
-        <!-- post meta -->
-        <div class="project-meta" style="color:<?php the_field('text_color') ?>">
-
-            <?php if( get_field('role') !== ""):
-            $role = get_field('role'); ?>
-                <ul class="block">
-                    <li class="label"><?php pll_e('Role'); ?></li>
-                    <li class="value">
-                        <ul>
-                            <?php foreach ( $role as $value): ?>
-                                <li><?php echo $value; ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </li>
-                </ul>
-            <?php endif; ?>
-            <?php if( get_field('agence') !== ""): ?>
-                <ul class="block">
-                    <li class="label"><?php pll_e('Agency'); ?></li>
-                    <li class="value"><?php the_field('agence') ?></li>
-                </ul>
-            <?php endif; ?>
-            <?php if( get_field('client') !== ""): ?>
-                <ul class="block">
-                    <li class="label"><?php pll_e('Client'); ?></li>
-                    <li class="value"><?php the_field('client') ?></li>
-                </ul>
-            <?php endif; ?>
-
-        </div>
-        <!-- /post meta -->
 
     </div><!-- class content -->
 
