@@ -1,4 +1,4 @@
-@media screen and (min-width: 680px) {
+@media screen and (min-width: 1220px) {
     footer {
         font-size: 1rem;
         line-height: 1.4rem;
@@ -16,7 +16,7 @@
             left: 0;
         
         	.nav-items-contact {
-                left: 60px;
+                left: 40px;
             }
         }
         
@@ -74,7 +74,13 @@
     }	
 }
 
-@media screen and (max-width: 679px) {
+@media screen and (min-width: 1220px) and (max-width: 1300px) {
+    footer .nav-social, footer .nav-contact {
+            width: 2vw;
+        }
+}
+
+@media screen and (max-width: 1219px) {
     footer {
         font-size: 1rem;
         text-align: center;

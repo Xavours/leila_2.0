@@ -113,6 +113,19 @@ header {
 			.project-menu-wrapper-nav {
 				display: flex;
 
+				.project-menu-wrapper-nav-sign {
+					opacity: 0;
+					transition: all 0.3s ease-out;
+
+					&.left {
+						margin-right: 60px;
+					}
+
+					&.right {
+						margin-left: 60px;
+					}
+				}
+
 				.project-menu-wrapper-nav-link {
 					position: relative;
 				}
@@ -224,6 +237,11 @@ a.name, .nav, project-menu-wrapper-nav {
 	&:hover {
 		width: 42px;
 
+		.project-menu-wrapper-nav-sign.left {
+			opacity: 1!important;
+			background: green;
+		}
+
 		&::after {
 			width: 40px;
 		}
@@ -258,6 +276,10 @@ a.name, .nav, project-menu-wrapper-nav {
 	&:hover {
 		width: 42px;
 		right: 20px;
+		
+		.project-menu-wrapper-nav-sign.right {
+			opacity: 1!important;
+		}
 
 		&::after {
 			width: 40px;

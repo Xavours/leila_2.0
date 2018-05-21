@@ -51,6 +51,9 @@ if( $nextPostLink === get_permalink() ) {
         </div> -->
 
     	<div class="project-menu-wrapper-nav">
+
+            <div class="project-menu-wrapper-nav-sign left desktop-only">Previous project</div>
+
     		<a class="project-menu-wrapper-nav-link" href="<?php echo $prevPostLink ?>">
     		    <div class="project-button-previous">
        				<span class="icon-wrap">
@@ -64,7 +67,7 @@ if( $nextPostLink === get_permalink() ) {
 
             <div class="project-menu-wrapper-infos" style="color:<?php the_field('text_color') ?>">
                 <div class="title"><?php the_title(); ?></div>
-                <div class="date"><?php the_field('date') ?></div>
+                <!-- <div class="date"><?php the_field('date') ?></div> -->
             </div>
 
     		<a class="project-menu-wrapper-nav-link" href="<?php echo $nextPostLink ?>">
@@ -77,6 +80,8 @@ if( $nextPostLink === get_permalink() ) {
                     </span>
         		</div>
     		</a>
+
+            <div class="project-menu-wrapper-nav-sign right desktop-only">Next project</div>
     	</div>
 
         <!-- <div class="project-menu-wrapper-next desktop-only" style="color:<?php the_field('text_color') ?>">
