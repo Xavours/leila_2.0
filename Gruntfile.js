@@ -12,6 +12,18 @@ module.exports = function(grunt) {
 				' Licensed <%= pkg.license %> */\n'
 		},
 
+		// //  Optimize images
+		// imagemin: {
+		// 	dynamic: {
+		// 		files: [{
+		// 			expand: true,
+		// 			cwd: 'images/',
+		// 			src: ['**/*.{png,jpg,gif}'],
+		// 			dest: 'dist/'
+		// 		}]
+		// 	}
+		// }
+
 		//  Convert SASS files into CSS  
 		sass: {
 			options: {
@@ -46,17 +58,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-		//  Watch 
-		watch: {
-			scripts: {
-				files: ['!**/*.css', '**/*.scss', '**/*.js', 'gruntfile.js','*.html'],
-				tasks: ['work'],
-				options: {
-					livereload: true,
-				},
-			},
-		},
-
 		//  Minify JS
 		uglify: {
 			options: {
@@ -69,7 +70,37 @@ module.exports = function(grunt) {
 			}
 		},
 
-		//  Upload files
+		//  Watch 
+		watch: {
+			sass: {
+				files: ['scss/*'],
+				tasks: ['styles', 'sftp:changedfiles'],
+				options: {
+					livereload: true,
+					spawn: false
+				},
+			},
+
+			scripts: {
+				files: ['js/*'],
+				tasks: ['uglify', 'sftp:changedfiles'],
+				options: {
+					livereload: true,
+					spawn: false
+				},
+			},
+
+			php: {
+				files: ['*.php','*/*.php'],
+				tasks: ['sftp:changedfiles'],
+				options: {
+					livereload: true,
+					spawn: false
+				},
+			},
+		},
+
+		//  Deploy the whole thing
 		'sftp-deploy': {
 			build: {
 				auth: {
@@ -78,8 +109,8 @@ module.exports = function(grunt) {
 					authKey: 'key1'
 				},
 				cache: 'sftpCache.json',
-				src: ['min/','css/'],
-				dest: ['clickandbuilds/XavierOrssaud/wp-content/themes/leila_2.0/min/','clickandbuilds/XavierOrssaud/wp-content/themes/leila_2.0/css/'],
+				src: 'min/',
+				dest: 'clickandbuilds/XavierOrssaud/wp-content/themes/leila_2.0/min/',
 				exclusions: ['min/**/.DS_Store', 'min/**/Thumbs.db', 'dist/tmp'],
 				serverSep: '/',
 				concurrency: 4,
@@ -90,19 +121,45 @@ module.exports = function(grunt) {
 		//  Clean .css and .css.map from sass files
 		clean: ["css/*.css.map"],
 
-		// //  Optimize images
-		// imagemin: {
-		// 	dynamic: {
-		// 		files: [{
-		// 			expand: true,
-		// 			cwd: 'images/',
-		// 			src: ['**/*.{png,jpg,gif}'],
-		// 			dest: 'dist/'
-		// 		}]
-		// 	}
-		// }
+		secret: grunt.file.readJSON('ftppass.json'),
+		sftp: {
+		  changedfiles: {
+		    files: {
+		      './': 'min/app.min.css'
+		    },
+		    options: {
+		      path: 'clickandbuilds/XavierOrssaud/wp-content/themes/leila_2.0',
+		      host: '<%= secret.host %>',
+		      username: '<%= secret.username %>',
+		      password: '<%= secret.password %>',
+		      showProgress: true,
+		    }
+		  }
+		},
+		sshexec: {
+		  changedfiles: {
+		    command: 'uptime',
+		    options: {
+		      host: '<%= secret.host %>',
+		      username: '<%= secret.username %>',
+		      password: '<%= secret.password %>'
+		    }
+		  }
+		}
 	});
 
+	grunt.event.on('watch', function(action, filepath, target) {
+		if ( target =="sass") {
+			grunt.log.writeln('******************  SASS CHANGED  ******************');
+			grunt.config('sftp.changedfiles.files', {"./": 'min/app.min.css'});
+		} else if ( target =="scripts") {
+			grunt.log.writeln('******************  JS CHANGED  ******************');
+			grunt.config('sftp.changedfiles.files', {"./": 'min/app.min.js'});
+		} else if ( target =="php") {
+			grunt.log.writeln('******************  PHP CHANGED  ******************');
+			grunt.config('sftp.changedfiles.files', {"./": filepath});
+		}
+	});
 
 	// load grunt modules
 	require('load-grunt-tasks')(grunt);
@@ -110,8 +167,9 @@ module.exports = function(grunt) {
 	// Default task(s)
 	grunt.registerTask('default', ['work', 'watch']);
 
+	grunt.registerTask('test', ['sftp:changedfiles']);
 	grunt.registerTask('build', ['work', 'imagemin']);
-	grunt.registerTask('work', ['styles', 'uglify', 'sftp-deploy']);
+	grunt.registerTask('work', ['styles', 'uglify', 'sftp-deploy:build', 'watch']);
 	grunt.registerTask('styles', ['sass', 'cssmin', 'autoprefixer:styles', 'clean']);
 
 };
