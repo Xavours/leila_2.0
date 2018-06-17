@@ -73,4 +73,5 @@ Thumbs.db
 sftpCache.json
 /css/*
 .ftppass
+ftppass.json
 
